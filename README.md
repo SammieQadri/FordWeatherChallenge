@@ -1,5 +1,14 @@
 # FordWeatherApp
 
+This project is intended to use the OpenWeatherMap API to display the current weather in 4 major US Cities.
+The chosen cities are Detroit, Chicago, Seattle, and New York.
+
+Furthermore, upon clicking on the city, you will be able to open a modal that will display the ten day forecast for that city as well. 
+
+There is also navigation to the about and contact us page. 
+
+In order to run this project, you will need to run `npm install` in this directory prior to running the development server. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
 
 ## Development server
