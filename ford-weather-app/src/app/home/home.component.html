@@ -1,0 +1,80 @@
+<div style="text-align:center">
+  <h1>Welcome to the Ford Weather Application!</h1>
+  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+    Launch Ten Day Forecast
+  </button>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Ten Day Forecast</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-light"
+      (click)="modal.close('Close click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>
+
+<div class="container">
+  <div class="row mt-5" style="margin:auto;">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ detWeather?.name }}</mat-card-title>
+        <mat-card-subtitle>Michigan</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Currently {{ detWeather?.main.temp }} Celsius</p>
+        <p>High of {{ detWeather?.main.temp_max }} Celsius</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ chiWeather?.name }}</mat-card-title>
+        <mat-card-subtitle>Illinois</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Currently {{ chiWeather?.main.temp }} Celsius</p>
+        <p>High of {{ chiWeather?.main.temp_max }} Celsius</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ seatWeather?.name }}</mat-card-title>
+        <mat-card-subtitle>Washington</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Currently {{ seatWeather?.main.temp }} Celsius</p>
+        <p>High of {{ seatWeather?.main.temp_max }} Celsius</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ nyWeather?.name }}</mat-card-title>
+        <mat-card-subtitle>New York</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Currently {{ nyWeather?.main.temp }} Celsius</p>
+        <p>High of {{ nyWeather?.main.temp_max }} Celsius</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
