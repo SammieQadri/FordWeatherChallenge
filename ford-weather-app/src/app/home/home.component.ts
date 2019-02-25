@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit {
         console.log(response);
         this.detWeather = JSON.parse(JSON.stringify(response));
         console.log(this.detWeather.main.temp);
+      }, (err) => {
+        console.log(err);
       }
     );
 
@@ -40,6 +42,8 @@ export class HomeComponent implements OnInit {
         console.log(response);
         this.chiWeather = JSON.parse(JSON.stringify(response));
         console.log(this.chiWeather.main.temp);
+      }, (err) => {
+        console.log(err);
       }
     );
 
@@ -48,6 +52,8 @@ export class HomeComponent implements OnInit {
         console.log(response);
         this.seatWeather = JSON.parse(JSON.stringify(response));
         console.log(this.seatWeather.main.temp);
+      }, (err) => {
+        console.log(err);
       }
     );
 
@@ -56,6 +62,18 @@ export class HomeComponent implements OnInit {
         console.log(response);
         this.nyWeather = JSON.parse(JSON.stringify(response));
         console.log(this.nyWeather.main.temp);
+      }, (err) => {
+        console.log(err);
+      }
+    );
+
+    this.weatherService.getForecast(ny).subscribe(
+      response => {
+        console.log(response);
+        this.nyWeather = JSON.parse(JSON.stringify(response));
+        // console.log(this.nyWeather.main.temp);
+      }, (err) => {
+        console.log(err);
       }
     );
   }

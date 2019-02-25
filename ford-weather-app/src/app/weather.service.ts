@@ -14,6 +14,8 @@ import { catchError, tap, map } from 'rxjs/operators';
 export class WeatherService {
   apiKey = 'dae66f21cfc7f62fc5e09716e679ab5a';
   url = 'https://api.openweathermap.org/data/2.5/weather?appid=' + this.apiKey + '&units=metric&id=';
+  url2 = 'https://api.openweathermap.org/data/2.5/forecast/daily?&id=';
+  url22 = '&cnt=10&units=metric&appid=' + this.apiKey;
 
   constructor(public http: HttpClient) { }
 
@@ -24,6 +26,10 @@ export class WeatherService {
 
   getWeather(cityId: number) { // Observable<object> {
      return this.http.get(`${this.url}${cityId}`);
+  }
+
+  getForecast(cityId: number) {
+    return this.http.get(`${this.url2}${cityId}${this.url22}`);
   }
 
 }

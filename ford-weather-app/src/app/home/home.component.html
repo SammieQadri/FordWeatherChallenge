@@ -1,8 +1,5 @@
 <div style="text-align:center">
   <h1>Welcome to the Ford Weather Application!</h1>
-  <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
-    Launch Ten Day Forecast
-  </button>
 </div>
 
 <ng-template #content let-modal>
@@ -39,9 +36,17 @@
         <mat-card-subtitle>Michigan</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p>Currently {{ detWeather?.main.temp }} Celsius</p>
-        <p>High of {{ detWeather?.main.temp_max }} Celsius</p>
+        <p>
+          <strong>Currently {{ detWeather?.main.temp }} Celsius</strong>
+        </p>
+        <p>Low: {{ detWeather?.main.temp_min }} C</p>
+        <p>High: {{ detWeather?.main.temp_max }} C</p>
       </mat-card-content>
+      <div style="text-align:center">
+        <button class="btn btn-sm btn-outline-primary" (click)="open(content)">
+          Launch Ten Day Forecast
+        </button>
+      </div>
     </mat-card>
 
     <mat-card>
@@ -50,9 +55,17 @@
         <mat-card-subtitle>Illinois</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p>Currently {{ chiWeather?.main.temp }} Celsius</p>
-        <p>High of {{ chiWeather?.main.temp_max }} Celsius</p>
+        <p>
+          <strong>Currently {{ chiWeather?.main.temp }} Celsius</strong>
+        </p>
+        <p>Low: {{ chiWeather?.main.temp_min }} C</p>
+        <p>High: {{ chiWeather?.main.temp_max }} C</p>
       </mat-card-content>
+      <div style="text-align:center">
+        <button class="btn btn-sm btn-outline-primary" (click)="open(content)">
+          Launch Ten Day Forecast
+        </button>
+      </div>
     </mat-card>
 
     <mat-card>
@@ -61,9 +74,17 @@
         <mat-card-subtitle>Washington</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p>Currently {{ seatWeather?.main.temp }} Celsius</p>
-        <p>High of {{ seatWeather?.main.temp_max }} Celsius</p>
+        <p>
+          <strong>Currently {{ seatWeather?.main.temp }} Celsius</strong>
+        </p>
+        <p>Low: {{ seatWeather?.main.temp_min }} C</p>
+        <p>High: {{ seatWeather?.main.temp_max }} C</p>
       </mat-card-content>
+      <div style="text-align:center">
+        <button class="btn btn-sm btn-outline-primary" (click)="open(content)">
+          Launch Ten Day Forecast
+        </button>
+      </div>
     </mat-card>
 
     <mat-card>
@@ -72,9 +93,17 @@
         <mat-card-subtitle>New York</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
-        <p>Currently {{ nyWeather?.main.temp }} Celsius</p>
-        <p>High of {{ nyWeather?.main.temp_max }} Celsius</p>
+        <p>
+          <strong>Currently {{ nyWeather?.main.temp }} Celsius</strong>
+        </p>
+        <p>Low: {{ nyWeather?.main.temp_min }} C</p>
+        <p>High: {{ nyWeather?.main.temp_max }} C</p>
       </mat-card-content>
+      <div style="text-align:center">
+        <button class="btn btn-sm btn-outline-primary" (click)="open(content)">
+          Launch Ten Day Forecast
+        </button>
+      </div>
     </mat-card>
   </div>
 </div>
