@@ -16,7 +16,8 @@ export class WeatherService {
   url = 'https://api.openweathermap.org/data/2.5/weather?appid=' + this.apiKey + '&units=metric&id=';
   url2 = 'https://api.openweathermap.org/data/2.5/forecast/daily?&id=';
   url22 = '&cnt=10&units=metric&appid=' + this.apiKey;
-
+  resp;
+  cityName;
   constructor(public http: HttpClient) { }
 
   // Detroit: 4990729
@@ -25,7 +26,10 @@ export class WeatherService {
   // New York: 5128581
 
   getWeather(cityId: number) { // Observable<object> {
-     return this.http.get(`${this.url}${cityId}`);
+    this.resp = this.http.get(`${this.url}${cityId}`);
+    this.cityName = JSON.parse(JSON.stringify(this.resp));
+    this.cityName = this.cityName.name;
+    return this.resp;
   }
 
   getForecast(cityId: number) {

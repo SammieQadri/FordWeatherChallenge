@@ -67,6 +67,16 @@ export class HomeComponent implements OnInit {
       }
     );
 
+    this.weatherService.getWeather(0).subscribe(
+      response => {
+        console.log(response);
+        this.nyWeather = JSON.parse(JSON.stringify(response));
+        console.log(this.nyWeather.main.temp);
+      }, (err) => {
+        console.log( (JSON.parse(JSON.stringify(err))).status );
+      }
+    );
+
     this.weatherService.getForecast(ny).subscribe(
       response => {
         console.log(response);
